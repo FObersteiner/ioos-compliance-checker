@@ -4,6 +4,7 @@ compliance_checker/tests/test_protocols.py
 
 Unit tests that ensure the compliance checker can successfully identify protocol endpoints
 """
+
 import platform
 
 import pytest
