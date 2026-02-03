@@ -12,10 +12,10 @@ description = "Checks Datasets and SOS endpoints for standards compliance"
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "Apache-2.0" }
 maintainers = [
-  { name = "Dave Foster", email = "dave@axiomdatascience.com" },
   { name = "Benjamin Adams" },
-  { name = "Luke Campbell" },
+  { name = "Dave Foster", email = "dave@axiomdatascience.com" },
   { name = "Filipe Fernandes" },
+  { name = "Luke Campbell" },
 ]
 requires-python = ">=3.10"
 classifiers = [
@@ -88,6 +88,11 @@ script-files = [
   "cchecker.py",
 ]
 
+[tool.setuptools.dynamic]
+dependencies = { file = [
+  "requirements.txt",
+] }
+
 [tool.setuptools.package-data]
 compliance_checker = [
   "data/*.xml",
@@ -96,11 +101,6 @@ compliance_checker = [
   "tests/data/non-comp/*.cdl",
   "data/templates/*.j2",
 ]
-
-[tool.setuptools.dynamic]
-dependencies = { file = [
-  "requirements.txt",
-] }
 
 [tool.setuptools_scm]
 write_to = "compliance_checker/_version.py"
